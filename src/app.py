@@ -13,7 +13,7 @@ def hello():
             database='prueba'
         )
         cursor = conn.cursor()
-        cursor.execute("SELECT 'Hola desde la base de datos MySQL!'")
+        cursor.execute("SELECT 'Hola desde la base de datos MySQL! Luis David Bueno 2023-0243'")
         result = cursor.fetchone()
         return f'<h1>{result[0]}</h1>'
     except Exception as e:
