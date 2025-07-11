@@ -1,0 +1,27 @@
+
+services:
+  web:
+    build: ./src
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    networks:
+      - appnet
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: prueba
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - appnet
+
+volumes:
+  dbdata:
+
+networks:
+  appnet:
